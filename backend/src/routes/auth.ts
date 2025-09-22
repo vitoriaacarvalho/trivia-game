@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req,res) => {
-    try{
+    try {
         const {username, password} = req.body;
         const result = await UserService.login(username, password);
         res.status(200).json({token: result.token});

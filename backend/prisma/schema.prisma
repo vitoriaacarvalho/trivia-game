@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+
+  questions Question[]
+
+  @@map("categories")
+}
+
+model Question {
+  id         String   @id @default(uuid())
+  question   String
+  categoryId String
+  difficulty Difficulty 
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime? @updatedAt
+
+  category Category @relation(fields: [categoryId], references: [id])
+
+  @@map("questions")
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+  APOCALYPTIC
+}
+
+model User {
+  id                    String     @id @default(uuid())
+  email                 String     @unique
+  username              String?    @unique
+  passwordHash          String     @map("password_hash")
+  role                  UserRole   @default(USER)
+  failedLoginAttempts   Int        @default(0)
+  lockedUntil           DateTime?
+  lastLoginAt           DateTime?
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime   @updatedAt
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}

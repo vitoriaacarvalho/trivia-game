@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
-/* ---------- Variáveis Globais ---------- */
 :root {
   --color-bg: #0B0B0D;
   --color-card: #1C1C1E;
@@ -12,9 +11,29 @@
   --color-placeholder: #A0A0A0;
   --radius-lg: 0.75rem;
   --shadow-card: 0 4px 20px rgba(30,144,255,0.3);
+  /* Dracula Theme Colors */
+  --dracula-purple: 269 100% 75%;
+  --dracula-pink: 326 100% 74%;
+  --dracula-cyan: 191 97% 77%;
+  --dracula-green: 135 94% 65%;
+  --dracula-orange: 31 100% 71%;
+  --dracula-red: 0 100% 67%;
+  --dracula-yellow: 65 92% 76%;
+  
+  /* Tailwind custom colors */
+  --color-dracula-purple: hsl(269, 100%, 75%);
+  --color-dracula-pink: hsl(326, 100%, 74%);
+  --color-dracula-cyan: hsl(191, 97%, 77%);
+  --color-dracula-green: hsl(135, 94%, 65%);
+  --color-dracula-orange: hsl(31, 100%, 71%);
+  --color-dracula-red: hsl(0, 100%, 67%);
+  --color-dracula-yellow: hsl(65, 92%, 76%);
+    
+  /* Gradients */
+  --gradient-dracula: linear-gradient(135deg, hsl(var(--dracula-purple)), hsl(var(--dracula-pink)));
+  --gradient-neon: linear-gradient(45deg, hsl(var(--dracula-cyan)), hsl(var(--dracula-green)));
 }
 
-/* ---------- Base ---------- */
 @layer base {
   body {
     @apply min-h-screen flex items-center justify-center font-sans;
@@ -36,7 +55,49 @@
   }
 }
 
-/* ---------- Componentes ---------- */
+@layer utilities {
+  /* Dracula color utilities */
+  .text-dracula-purple { color: var(--color-dracula-purple); }
+  .text-dracula-pink { color: var(--color-dracula-pink); }
+  .text-dracula-cyan { color: var(--color-dracula-cyan); }
+  .text-dracula-green { color: var(--color-dracula-green); }
+  .text-dracula-orange { color: var(--color-dracula-orange); }
+  .text-dracula-red { color: var(--color-dracula-red); }
+  .text-dracula-yellow { color: var(--color-dracula-yellow); }
+  
+  .bg-dracula-purple { background-color: var(--color-dracula-purple); }
+  .bg-dracula-pink { background-color: var(--color-dracula-pink); }
+  .bg-dracula-cyan { background-color: var(--color-dracula-cyan); }
+  .bg-dracula-green { background-color: var(--color-dracula-green); }
+  .bg-dracula-orange { background-color: var(--color-dracula-orange); }
+  .bg-dracula-red { background-color: var(--color-dracula-red); }
+  .bg-dracula-yellow { background-color: var(--color-dracula-yellow); }
+  
+  .from-dracula-purple { --tw-gradient-from: var(--color-dracula-purple) var(--tw-gradient-from-position); }
+  .from-dracula-pink { --tw-gradient-from: var(--color-dracula-pink) var(--tw-gradient-from-position); }
+  .from-dracula-cyan { --tw-gradient-from: var(--color-dracula-cyan) var(--tw-gradient-from-position); }
+  .from-dracula-green { --tw-gradient-from: var(--color-dracula-green) var(--tw-gradient-from-position); }
+  .from-dracula-orange { --tw-gradient-from: var(--color-dracula-orange) var(--tw-gradient-from-position); }
+  .from-dracula-red { --tw-gradient-from: var(--color-dracula-red) var(--tw-gradient-from-position); }
+  .from-dracula-yellow { --tw-gradient-from: var(--color-dracula-yellow) var(--tw-gradient-from-position); }
+  
+  .via-dracula-purple { --tw-gradient-via: var(--color-dracula-purple) var(--tw-gradient-via-position); }
+  .via-dracula-pink { --tw-gradient-via: var(--color-dracula-pink) var(--tw-gradient-via-position); }
+  .via-dracula-cyan { --tw-gradient-via: var(--color-dracula-cyan) var(--tw-gradient-via-position); }
+  .via-dracula-green { --tw-gradient-via: var(--color-dracula-green) var(--tw-gradient-via-position); }
+  .via-dracula-orange { --tw-gradient-via: var(--color-dracula-orange) var(--tw-gradient-via-position); }
+  .via-dracula-red { --tw-gradient-via: var(--color-dracula-red) var(--tw-gradient-via-position); }
+  .via-dracula-yellow { --tw-gradient-via: var(--color-dracula-yellow) var(--tw-gradient-via-position); }
+  
+  .to-dracula-purple { --tw-gradient-to: var(--color-dracula-purple) var(--tw-gradient-to-position); }
+  .to-dracula-pink { --tw-gradient-to: var(--color-dracula-pink) var(--tw-gradient-to-position); }
+  .to-dracula-cyan { --tw-gradient-to: var(--color-dracula-cyan) var(--tw-gradient-to-position); }
+  .to-dracula-green { --tw-gradient-to: var(--color-dracula-green) var(--tw-gradient-to-position); }
+  .to-dracula-orange { --tw-gradient-to: var(--color-dracula-orange) var(--tw-gradient-to-position); }
+  .to-dracula-red { --tw-gradient-to: var(--color-dracula-red) var(--tw-gradient-to-position); }
+  .to-dracula-yellow { --tw-gradient-to: var(--color-dracula-yellow) var(--tw-gradient-to-position); }
+}
+
 @layer components {
   .auth-card {
     background-color: var(--color-card);

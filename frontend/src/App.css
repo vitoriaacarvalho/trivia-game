@@ -1,42 +1,93 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+/* ---------- Variáveis Globais ---------- */
+:root {
+  --color-bg: #0B0B0D;
+  --color-card: #1C1C1E;
+  --color-primary: #1E90FF;
+  --color-accent: #7A1FA2;
+  --color-text: #E5E5E5;
+  --color-input-bg: #0F0F10;
+  --color-placeholder: #A0A0A0;
+  --radius-lg: 0.75rem;
+  --shadow-card: 0 4px 20px rgba(30,144,255,0.3);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ---------- Base ---------- */
+@layer base {
+  body {
+    @apply min-h-screen flex items-center justify-center font-sans;
+    background: linear-gradient(135deg, var(--color-bg), var(--color-card), var(--color-accent));
+    color: var(--color-text);
   }
-  to {
-    transform: rotate(360deg);
+
+  h1, h2, h3 {
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--color-primary);
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: var(--color-accent);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* ---------- Componentes ---------- */
+@layer components {
+  .auth-card {
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    backdrop-blur: 8px;
+    box-shadow: var(--shadow-card);
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .auth-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+  .auth-input::placeholder {
+    color: var(--color-placeholder);
+  }
+  .auth-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-accent);
+    outline: none;
+  }
 
-.read-the-docs {
-  color: #888;
+  .auth-button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    box-shadow: var(--shadow-card);
+    transition: all 0.2s;
+  }
+  .auth-button:hover {
+    background: linear-gradient(to right, var(--color-accent), var(--color-primary));
+    box-shadow: 0 6px 24px rgba(30,144,255,0.4);
+  }
+
+  .auth-link {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    transition: color 0.2s;
+  }
+  .auth-link:hover {
+    color: var(--color-accent);
+  }
 }

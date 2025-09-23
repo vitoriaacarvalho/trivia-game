@@ -1,5 +1,5 @@
 import { UserService } from "../services/userService"
-import { UserOutput, UserInput, userEntity } from "../models/user"
+import { UserOutput, UserInput } from "../models/user"
 
 export class UserController{
     static async createUser(user: UserInput){

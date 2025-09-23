@@ -1,9 +1,4 @@
-import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
-
-const prisma = new PrismaClient();
-
-export const userEntity = prisma.user;
 
 export const userSchemaInput = z.object({
   email: z.email(),
@@ -25,7 +20,6 @@ export const userSchemaOutput = z.object({
   lockedUntil: z.date().optional(),
   lastLoginAt: z.date().optional(),
 });
-
 
 export type UserInput = z.infer<typeof userSchemaInput>;
 

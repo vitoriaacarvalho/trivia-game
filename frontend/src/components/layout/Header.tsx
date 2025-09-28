@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="w-full mb-8 mt-10">
-      <div className="container mx-auto px-4 py-4 flex justify-center">
+      <div className="container h-[10vh] mx-auto px-4 py-4 flex justify-center">
         <div className="text-center mb-8">
           <h1
             className="text-5xl font-extrabold uppercase tracking-wide whitespace-nowrap"

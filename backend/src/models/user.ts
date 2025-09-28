@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const userSchemaInput = z.object({
   email: z.email(),
-  username: z.string().optional(),
+  username: z.string(),
   passwordHash: z.string(),
   role: z.enum(["ADMIN", "USER"]),
   failedLoginAttempts: z.number().optional(),
@@ -13,7 +13,7 @@ export const userSchemaInput = z.object({
 export const userSchemaOutput = z.object({
   id: z.string(),
   email: z.email(),
-  username: z.string().optional(),
+  username: z.string(),
   passwordHash: z.string(),
   role: z.enum(["ADMIN", "USER"]),
   failedLoginAttempts: z.number().optional(),

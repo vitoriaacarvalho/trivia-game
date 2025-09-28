@@ -12,7 +12,14 @@ export async function createUser(user: UserInput) {
     passwordHash: user.passwordHash,
     role: user.role,
   });
-  await userEntity.create({ data: validatedData });
+  await userEntity.create({
+    data: {
+      email: validatedData.email,
+      username: validatedData.username,
+      passwordHash: validatedData.passwordHash,
+      role: validatedData.role,
+    }
+  });
 }
 
 export async function getUser(username: string): Promise<UserOutput | null> {
@@ -42,7 +49,7 @@ export async function updateFailedLoginAttempts(
 function _toUser(user: Prisma.UserGetPayload<Prisma.UserCreateArgs>): UserOutput {
   return {
     id: user.id,
-    username: user.username ?? undefined,
+    username: user.username,
     email: user.email,
     passwordHash: user.passwordHash,
     role: user.role,

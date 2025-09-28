@@ -22,11 +22,11 @@ app.use(cookieParser());
 
 app.use('/api/auth', authRoutes);
 
-app.get('/health', (req, res) => {
+app.get('/health', (_req, res) => {
     res.status(200).json({ message: 'Server is running!' });
 });
 
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
     console.error('Error:', err);
     res.status(500).json({ error: 'Internal server error' });
 });

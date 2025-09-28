@@ -46,6 +46,7 @@ export async function updateFailedLoginAttempts(
   });
   return user ? user.failedLoginAttempts : null;
 }
+
 function _toUser(user: Prisma.UserGetPayload<Prisma.UserCreateArgs>): UserOutput {
   return {
     id: user.id,

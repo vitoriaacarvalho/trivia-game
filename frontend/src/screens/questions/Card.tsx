@@ -1,5 +1,5 @@
-import { Header } from "../layout/Header";
-import { Option } from "./Option";
+import { Header } from "@trivia/components/layout/Header";
+import { Option } from "@trivia/components/questions/Option";
 
 export function Card() {
   const options = [

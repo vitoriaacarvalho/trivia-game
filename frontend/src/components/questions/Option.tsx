@@ -10,6 +10,7 @@ export function Option({text, isSelected, index}: OptionProps){
           case 3:
             return 'd)';
         }
+        return '';
       }
     
     return (

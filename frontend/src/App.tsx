@@ -1,8 +1,8 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login } from './components/auth/Login';
-import { Register } from './components/auth/Register';
-import { Card } from './components/questions/Card';
+import { Login } from '@trivia/screens/auth/Login';
+import { Register } from '@trivia/screens/auth/Register';
+import { Card } from '@trivia/screens/questions/Card';
 
 function App() {
   return (

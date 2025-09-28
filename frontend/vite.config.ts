@@ -8,4 +8,14 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  resolve: {
+    alias: {
+      '@trivia': '/src',
+      '@trivia/components': '/src/components',
+      '@trivia/screens': '/src/screens',
+      '@trivia/hooks': '/src/hooks',
+      '@trivia/utils': '/src/utils',
+      '@trivia/types': '/src/types',
+    },
+  },
 })

@@ -1,4 +1,4 @@
-import { Header } from "../layout/Header";
+import { Header } from "@trivia/components/layout/Header";
 
 export function Login() {
     return (

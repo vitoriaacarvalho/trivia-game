@@ -16,6 +16,17 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Path mapping */
+    "baseUrl": "./src",
+    "paths": {
+      "@trivia/*": ["./*"],
+      "@trivia/components/*": ["./components/*"],
+      "@trivia/screens/*": ["./screens/*"],
+      "@trivia/hooks/*": ["./hooks/*"],
+      "@trivia/utils/*": ["./utils/*"],
+      "@trivia/types/*": ["./types/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

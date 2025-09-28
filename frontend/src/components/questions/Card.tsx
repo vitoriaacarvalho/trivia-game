@@ -11,10 +11,10 @@ export function Card() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex-1 flex items-center justify-center p-4">
+      <div className="flex items-center justify-center p-4">
         <div
           className="flex flex-row flex-wrap justify-center items-center
-                w-[90vw] max-w-[40rem] min-h-[60vh] max-h-[70vh] p-6
+                w-[90vw] max-w-[35rem] lg:max-w-[45rem] min-h-[60vh] max-h-[70vh] p-6
                bg-zinc-800/30 backdrop-blur-sm
                rounded-lg border border-purple-600 shadow-lg"
         >
